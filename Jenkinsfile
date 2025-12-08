@@ -31,7 +31,7 @@ pipeline {
       steps {
         script {
           def jar = sh(script: "ls target/*.jar | head -n 1", returnStdout: true).trim()
-          sh "curl -v -u admin:$(docker exec nexus cat /nexus-data/admin.password) --upload-file ${jar} ${env.NEXUS_URL}/repository/${env.NEXUS_REPO}/com/example/sample-app/0.0.1-SNAPSHOT/sample-app-0.0.1-SNAPSHOT.jar"
+          sh "curl -v -u admin:Nexus@Jenkins2024#Secure! --upload-file ${jar} ${env.NEXUS_URL}/repository/${env.NEXUS_REPO}/com/example/sample-app/0.0.1-SNAPSHOT/sample-app-0.0.1-SNAPSHOT.jar"
         }
       }
     }
